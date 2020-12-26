@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initRecyclerView();
-
-
     }
 
 
@@ -27,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         DummyContent dummyContent = new DummyContent();
-
-
         RecyclerView.Adapter adapter = new RViewAdapter(dummyContent.ITEMS);
         recyclerView.setAdapter(adapter);
     }

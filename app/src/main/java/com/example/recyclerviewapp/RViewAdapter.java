@@ -13,7 +13,10 @@ import java.util.List;
 
 public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.ViewHolder> {
     private final List<DummyContent.DummyItem> items;
-    public static final String ARG_ITEM_ID="_Id";
+    public static final String ARG_ITEM_ID ="Id";
+    public static final String ARG_ITEM_DETAILS = "Details";
+
+
 
     RViewAdapter(List<DummyContent.DummyItem> items) {
         this.items = items;
@@ -51,7 +54,8 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.ViewHolder> 
             DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
             Context context = view.getContext();
             Intent intent = new Intent(context, DetailActivity.class);
-            intent.putExtra(ARG_ITEM_ID, item.id);
+            //intent.putExtra(ARG_ITEM_ID, item.id);
+            intent.putExtra(ARG_ITEM_DETAILS, item.details);
             context.startActivity(intent);
         }
     };
